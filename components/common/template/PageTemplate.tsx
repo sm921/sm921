@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import { Jumbotron } from "react-bootstrap";
-import { BreadCrumb, BreadcrumbInfo } from "../Breadcrumb";
+import { BreadCrumb } from "../Breadcrumb";
 
 export const PageTemplate = (props: {
   children: ReactNode;
-  links: BreadcrumbInfo[];
+  links: (() => JSX.Element)[];
   title: string;
 }) => (
   <>

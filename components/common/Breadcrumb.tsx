@@ -1,15 +1,11 @@
 import { Breadcrumb } from "react-bootstrap";
+import { LinkHome } from "../../src/constants/pageInfo";
 
-export interface BreadcrumbInfo {
-  isActive?: boolean;
-  Link: () => JSX.Element;
-}
-
-export const BreadCrumb = (props: { links: BreadcrumbInfo[] }) => (
+export const BreadCrumb = (props: { links: (() => JSX.Element)[] }) => (
   <Breadcrumb>
-    {props.links.map((info, i) => (
-      <Breadcrumb.Item key={i} active={info.isActive ?? false}>
-        <info.Link></info.Link>
+    {props.links.map((Link, i) => (
+      <Breadcrumb.Item key={i} active={i < props.links.length - 1}>
+        <Link></Link>
       </Breadcrumb.Item>
     ))}
   </Breadcrumb>

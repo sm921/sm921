@@ -6,10 +6,7 @@ import {
 } from "../../src/constants/pageInfo";
 
 export default () => (
-  <PageTemplate
-    title={NAME_FASHION}
-    links={[{ Link: LinkHome }, { Link: LinkFashion, isActive: true }]}
-  >
+  <PageTemplate title={NAME_FASHION} links={[LinkHome, LinkFashion]}>
     test
   </PageTemplate>
 );
